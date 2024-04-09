@@ -60,7 +60,7 @@ export class Form {
     Object.values(this.FIELD_NAME).forEach((name) => {
       if (
         this.error[name] ||
-        this.value[name] === disabled
+        this.value[name] === undefined
       ) {
         disabled = true
       }
