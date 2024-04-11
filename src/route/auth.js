@@ -8,9 +8,21 @@ const { Confirm } = require('../class/confirm')
 const { Session } = require('../class/session')
 
 User.create({
-  email: 'test@mail.com',
+  email: 'user@mail.com',
   password: 123,
   role: 1,
+})
+
+User.create({
+  email: 'admin@mail.com',
+  password: 123,
+  role: 2,
+})
+
+User.create({
+  email: 'developer@mail.com',
+  password: 123,
+  role: 3,
 })
 
 // ================================================================
@@ -106,7 +118,7 @@ router.get('/recovery', function (req, res) {
     // вказуємо назву контейнера
     name: 'recovery',
     // вказуємо назву компонентів
-    component: ['buck-button', 'field'],
+    component: ['back-button', 'field'],
 
     // вказуємо назву сторінки
     title: 'Recovery page',
@@ -151,6 +163,8 @@ router.post('/recovery', function (req, res) {
 })
 
 // ================================================================
+
+// router.get Створює нам один ентпоїнт
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/recovery-confirm', function (req, res) {
@@ -217,8 +231,6 @@ router.post('/recovery-confirm', function (req, res) {
     })
   }
 })
-
-// ================================================================
 
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/signup-confirm', function (req, res) {
